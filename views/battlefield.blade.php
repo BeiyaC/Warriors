@@ -10,6 +10,7 @@
         <img src="{{ $battleField->getMyWarrior()->imageUrl }}" alt="{{ get_class ($battleField->getMyWarrior()) }}" style="width:300px;">
         <img src="{{ $battleField->getMyWarrior()->weapon->imageUrl }}" alt="Pan !" style="width:100px;">
         <progress class="nes-progress is-primary mt-3" value="{{ $battleField->getMyWarrior()->life }}" max="100"></progress>
+          <div> {{ $battleField->getMyWarrior()->getPower() }} </div>
       </td>
 
       @if($battleField->getOtherWarriors() != NULL)
@@ -24,6 +25,7 @@
                   </a>
                   <img src="{{ $warrior->weapon->imageUrl }}" alt="Pan !" style="width:30px;">
                 <progress class="nes-progress is-primary mt-3" value="{{ $warrior->life }}" max="100"></progress>
+                    <div> {{ $warrior->getPower() }} </div>
                 </td>
               </tr>
             @endforeach
